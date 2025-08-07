@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: swaggoz-backend
+    env: node
+    plan: free
+    buildCommand: cd swagteam/backend && npm install
+    startCommand: cd swagteam/backend && node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_BASE_URL
+        value: https://openrouter.ai/api/v1
+      - key: QWEN3_MODEL
+        value: qwen/qwen3-coder
+      - key: CORS_ORIGINS
+        sync: false
