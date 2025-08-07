@@ -25,8 +25,8 @@ git push -u origin main
 4. **Configure the service:**
    - **Name**: `swaggoz-backend`
    - **Environment**: `Node`
-   - **Build Command**: `cd swagteam/backend && npm install`
-   - **Start Command**: `cd swagteam/backend && node server.js`
+   - **Build Command**: `cd backend && npm install`
+   - **Start Command**: `cd backend && node server.js`
    - **Plan**: Free
 
 5. **Set Environment Variables:**
@@ -51,7 +51,7 @@ git push -u origin main
 
 4. **Configure the project:**
    - **Framework Preset**: `Create React App`
-   - **Root Directory**: `swagteam/frontend`
+   - **Root Directory**: `frontend`
    - **Build Command**: `npm run build`
    - **Output Directory**: `build`
 
@@ -82,8 +82,8 @@ git push -u origin main
    ```yaml
    Name: swaggoz-backend
    Environment: Node
-   Build Command: cd swagteam/backend && npm install
-   Start Command: cd swagteam/backend && node server.js
+   Build Command: cd backend && npm install
+   Start Command: cd backend && node server.js
    ```
 
 4. **Environment Variables:**
@@ -102,7 +102,7 @@ git push -u origin main
 2. **Import your GitHub repository**
 3. **Use these settings:**
    - Framework: Create React App
-   - Root Directory: `swagteam/frontend`
+   - Root Directory: `frontend`
    - Build Command: `npm run build`
    - Output Directory: `build`
 

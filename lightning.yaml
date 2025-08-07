@@ -1,0 +1,9 @@
+app: swaggoz-frontend
+build:
+  commands:
+    - cd frontend
+    - npm install
+    - npm run build
+  output: frontend/build
+env:
+  REACT_APP_BACKEND_URL: https://swaggoz-backend.onrender.com

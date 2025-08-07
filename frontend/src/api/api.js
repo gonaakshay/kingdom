@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.REACT_APP_BACKEND_URL || '';
+const baseUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 export async function uploadSwaggerFile(file) {
   const formData = new FormData();
   formData.append('swagger', file);
 
-  const response = await axios.post(`${BASE_URL}/api/upload`, formData, {
+  const response = await axios.post(`${baseUrl}/api/upload`, formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
   console.log('Raw upload API response:', response.data); // Add this log here to debug
@@ -16,7 +16,7 @@ export async function uploadSwaggerFile(file) {
 
 export async function uploadSwaggerUrl(swaggerUrl) {
   const response = await axios.post(
-    `${BASE_URL}/api/upload`,
+    `${baseUrl}/api/upload`,
     { swaggerUrl },
     { headers: { 'Content-Type': 'application/json' } }
   );
@@ -25,7 +25,7 @@ export async function uploadSwaggerUrl(swaggerUrl) {
 
 export async function generateTestCases(swaggerFile, testType = 'comprehensive') {
   const response = await axios.post(
-    `${BASE_URL}/api/generate-test-cases`,
+    `${baseUrl}/api/generate-test-cases`,
     {
       swaggerSpec: swaggerFile, // note: backend expects swaggerSpec as property name
       testType,
@@ -35,6 +35,6 @@ export async function generateTestCases(swaggerFile, testType = 'comprehensive')
 }
 
 export async function runTests(testCases, swaggerSpec) {
-  const response = await axios.post(`${BASE_URL}/api/test`, { testCases, swaggerSpec });
+  const response = await axios.post(`${baseUrl}/api/test`, { testCases, swaggerSpec });
   return response.data;
 }
