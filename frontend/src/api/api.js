@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+const baseUrl = 'https://kingdom-olj1.onrender.com';
 
 export async function uploadSwaggerFile(file) {
   const formData = new FormData();
